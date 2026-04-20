@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neel Travels | Neel Travels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#0d0d0d;
+    color:white;
+}
+
+/* NAVBAR */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    transition:0.3s;
+}
+
+header.scrolled{
+    background:black;
+    box-shadow:0 2px 10px rgba(0,0,0,0.8);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+}
+
+nav h1{
+    color:gold;
+    font-family:'Playfair Display', serif;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1501117716987-c8e2a1a9b0b5') no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:60px;
+    font-family:'Playfair Display', serif;
+    animation:fadeIn 2s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:22px;
+    color:#ddd;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    background:gold;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+/* SECTION */
+section{
+    padding:80px 60px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:40px;
+    color:gold;
+    margin-bottom:40px;
+    font-family:'Playfair Display', serif;
+}
+
+/* FEATURES */
+.features{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.feature-box{
+    width:250px;
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:10px;
+    transition:0.4s;
+}
+
+.feature-box:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 20px rgba(255,215,0,0.4);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:black;
+    color:#aaa;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav{padding:15px;}
+    .hero h2{font-size:40px;}
+    section{padding:50px 20px;}
+}
+</style>
+</head>
+
+<body>
+
+<header id="navbar">
+<nav>
+    <h1>Neel Travels</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Welcome to Neel Travels</h1>
+        <h2>Experience Luxury Like Never Before</h2>
+        <p>Travel. Relax. Indulge.</p>
+        <button class="btn" onclick="explore()">Explore Now</button>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<section>
+    <h2 class="section-title">Our Luxury Highlights</h2>
+    <div class="features">
+        <div class="feature-box">
+            <h3>5-Star Resorts</h3>
+            <p>Stay at the world's most luxurious resorts and private villas.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Private Jets</h3>
+            <p>Fly in comfort and privacy with elite jet services.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Luxury Dining</h3>
+            <p>Enjoy gourmet dining experiences across the globe.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+© 2026 Neel Travels | Luxury Travel Redefined
+</footer>
+
+</body>
+</html>

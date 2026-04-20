@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Neel Travels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            background:#0d0d0d;
+            color:white;
+        }
+
+        header{
+            background:black;
+            padding:20px 60px;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            font-family:'Playfair Display', serif;
+            color:gold;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:30px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:gold;
+        }
+
+        .hero{
+            height:45vh;
+            background:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98') no-repeat center/cover;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .hero h2{
+            font-size:48px;
+            font-family:'Playfair Display', serif;
+            background:rgba(0,0,0,0.6);
+            padding:20px 40px;
+        }
+
+        section{
+            padding:70px 60px;
+        }
+
+        .section-title{
+            text-align:center;
+            color:gold;
+            font-size:38px;
+            margin-bottom:40px;
+            font-family:'Playfair Display', serif;
+        }
+
+        .about-content{
+            max-width:900px;
+            margin:auto;
+            line-height:1.8;
+            color:#ccc;
+            font-size:16px;
+            text-align:center;
+        }
+
+        .highlights{
+            margin-top:50px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:30px;
+            justify-content:center;
+        }
+
+        .highlight-box{
+            background:#1a1a1a;
+            padding:25px;
+            width:260px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .highlight-box h3{
+            color:gold;
+            margin-bottom:10px;
+            font-family:'Playfair Display', serif;
+        }
+
+        footer{
+            text-align:center;
+            padding:25px;
+            background:black;
+            color:#aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>Neel Travels</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>About Luxe Haven</h2>
+</div>
+
+<section>
+    <h2 class="section-title">Who We Are</h2>
+
+    <div class="about-content">
+        Luxe Haven is a premium luxury travel brand dedicated to crafting unforgettable journeys for elite travelers. 
+        We specialize in private jet travel, 5-star resort stays, personalized concierge services, and exclusive experiences 
+        across the world’s most beautiful destinations. Our mission is to redefine luxury travel by combining comfort, 
+        elegance, and personalized care in every trip we design.
+    </div>
+
+    <div class="highlights">
+        <div class="highlight-box">
+            <h3>Exclusive Partnerships</h3>
+            <p>We collaborate with the world’s top resorts, airlines, and hospitality brands.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Personalized Planning</h3>
+            <p>Every journey is custom-designed to match your preferences and lifestyle.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Luxury Redefined</h3>
+            <p>We go beyond travel to deliver memorable, once-in-a-lifetime experiences.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Neel Travels | Crafted for Luxury Travelers
+</footer>
+
+</body>
+</html>

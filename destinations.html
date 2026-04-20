@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Destinations | Neel Travels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0d0d0d;color:white;}
+
+/* NAVBAR */
+header{position:fixed;width:100%;top:0;z-index:1000;}
+nav{display:flex;justify-content:space-between;padding:20px 60px;background:black;}
+nav h1{color:gold;}
+nav ul{display:flex;gap:25px;list-style:none;}
+nav a{color:white;text-decoration:none;}
+nav a:hover{color:gold;}
+
+/* HERO */
+.hero{
+    height:50vh;
+    background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+    display:flex;justify-content:center;align-items:center;
+}
+.hero h2{font-size:45px;background:rgba(0,0,0,0.6);padding:20px;}
+
+/* SECTION */
+section{padding:100px 60px;}
+
+/* FILTER */
+.filters{text-align:center;margin-bottom:20px;}
+.filters button{
+    margin:5px;padding:8px 15px;background:gold;border:none;cursor:pointer;
+}
+.filters input{
+    margin-top:10px;padding:10px;border-radius:20px;border:none;
+}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.place{background:#1a1a1a;border-radius:10px;overflow:hidden;}
+.place img{width:100%;height:200px;object-fit:cover;}
+.place h3{color:gold;padding:10px;}
+.place p{padding:0 10px 15px;color:#ccc;}
+.place button{
+    margin:10px;padding:8px 15px;background:gold;border:none;cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;justify-content:center;align-items:center;
+}
+.modal-content{
+    background:#1a1a1a;padding:20px;border-radius:10px;
+    max-width:600px;width:90%;text-align:center;
+}
+.modal img{width:100%;border-radius:10px;margin:10px 0;}
+
+footer{text-align:center;padding:20px;background:black;}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h1>Neel Travels</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero">
+<h2>Explore Luxury Destinations</h2>
+</div>
+
+<section>
+
+<div class="filters">
+<button onclick="filterPlaces('all')">All</button>
+<button onclick="filterPlaces('beach')">Beach</button>
+<button onclick="filterPlaces('mountain')">Mountain</button>
+<button onclick="filterPlaces('city')">City</button>
+<br>
+<input type="text" placeholder="Search..." onkeyup="searchPlace(this.value)">
+</div>
+
+<div class="grid">
+
+<div class="place beach">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<h3>Maldives</h3>
+<p>Luxury island escape</p>
+<button onclick="openDetails('Maldives')">View</button>
+</div>
+
+<div class="place mountain">
+<img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+<h3>Swiss Alps</h3>
+<p>Snowy luxury mountains</p>
+<button onclick="openDetails('Swiss')">View</button>
+</div>
+
+<div class="place city">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<h3>Dubai</h3>
+<p>Modern luxury city</p>
+<button onclick="openDetails('Dubai')">View</button>
+</div>
+
+<div class="place beach">
+<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+<h3>Bali</h3>
+<p>Tropical paradise</p>
+<button onclick="openDetails('Bali')">View</button>
+</div>
+
+<div class="place city">
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+<h3>Paris</h3>
+<p>Romantic luxury</p>
+<button onclick="openDetails('Paris')">View</button>
+</div>
+
+<div class="place city">
+<img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1">
+<h3>New York</h3>
+<p>Luxury lifestyle</p>
+<button onclick="openDetails('NewYork')">View</button>
+</div>
+
+<div class="place mountain">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<h3>Switzerland</h3>
+<p>Scenic beauty</p>
+<button onclick="openDetails('Switzerland')">View</button>
+</div>
+
+<div class="place beach">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<h3>Seychelles</h3>
+<p>Private island luxury</p>
+<button onclick="openDetails('Seychelles')">View</button>
+</div>
+
+<div class="place city">
+<img src="https://images.unsplash.com/photo-1526481280691-781e6b7f8d7b">
+<h3>Tokyo</h3>
+<p>Modern culture</p>
+<button onclick="openDetails('Tokyo')">View</button>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content" id="modalContent"></div>
+</div>
+
+<footer>© 2026 Neel Travels</footer>
+
+<script>
+
+// FILTER
+function filterPlaces(cat){
+document.querySelectorAll(".place").forEach(p=>{
+p.style.display=(cat==="all"||p.classList.contains(cat))?"block":"none";
+});
+}
+
+// SEARCH
+function searchPlace(val){
+document.querySelectorAll(".place").forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(val.toLowerCase())?"block":"none";
+});
+}
+
+// DATA
+const data={
+Maldives:{
+img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+places:"Male, Maafushi, Banana Reef",
+cost:"₹1,50,000 - ₹3,00,000"
+},
+Swiss:{
+img:"https://images.unsplash.com/photo-1491553895911-0055eca6402d",
+places:"Zermatt, Jungfrau, Lucerne",
+cost:"₹2,00,000 - ₹4,00,000"
+},
+Dubai:{
+img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+places:"Burj Khalifa, Desert Safari",
+cost:"₹80,000 - ₹2,00,000"
+},
+Bali:{
+img:"https://images.unsplash.com/photo-1505761671935-60b3a7427bad",
+places:"Ubud, Tanah Lot",
+cost:"₹70,000 - ₹1,50,000"
+},
+Paris:{
+img:"https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
+places:"Eiffel Tower, Louvre",
+cost:"₹1,80,000 - ₹3,50,000"
+},
+NewYork:{
+img:"https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",
+places:"Times Square, Central Park",
+cost:"₹2,00,000 - ₹4,00,000"
+},
+Switzerland:{
+img:"https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+places:"Interlaken, Zurich",
+cost:"₹2,50,000 - ₹5,00,000"
+},
+Seychelles:{
+img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+places:"Mahe, Praslin",
+cost:"₹1,80,000 - ₹3,50,000"
+},
+Tokyo:{
+img:"https://images.unsplash.com/photo-1526481280691-781e6b7f8d7b",
+places:"Shibuya, Mount Fuji",
+cost:"₹1,50,000 - ₹3,00,000"
+}
+};
+
+// ROUTES
+const routes={
+Maldives:"Mumbai → Male ✈️",
+Swiss:"Mumbai → Zurich → Alps 🚆",
+Dubai:"Mumbai → Dubai ✈️",
+Bali:"Mumbai → Singapore → Bali ✈️",
+Paris:"Mumbai → Paris ✈️",
+NewYork:"Mumbai → London → New York ✈️",
+Switzerland:"Mumbai → Zurich → Interlaken 🚆",
+Seychelles:"Mumbai → Mahe ✈️",
+Tokyo:"Mumbai → Tokyo ✈️"
+};
+
+// VIEW DETAILS
+function openDetails(place){
+let d=data[place];
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalContent").innerHTML=`
+<h2>${place}</h2>
+<img src="${d.img}">
+<p><b>Famous Places:</b> ${d.places}</p>
+<p><b>Travel Cost:</b> ${d.cost}</p>
+<br>
+<button onclick="showPlans('${place}')">Book Now</button>
+<br><br>
+<button onclick="closeModal()">Close</button>
+`;
+}
+
+// BOOK → SHOW ROUTES + PLANS
+function showPlans(place){
+document.getElementById("modalContent").innerHTML=`
+<h2>${place} Travel Plans</h2>
+
+<p><b>Route:</b> ${routes[place]}</p>
+<p><b>Estimated Cost:</b> ${data[place].cost}</p>
+
+<br>
+
+<h3>Packages</h3>
+<p>Basic: ₹50,000</p>
+<p>Premium: ₹1,50,000</p>
+<p>Luxury: ₹3,00,000</p>
+
+<br>
+
+<button onclick="confirmBooking('${place}')">Confirm Booking</button>
+<br><br>
+<button onclick="closeModal()">Close</button>
+`;
+}
+
+// CONFIRM
+function confirmBooking(place){
+alert("Booking Confirmed for " + place + "!");
+}
+
+// CLOSE
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
